@@ -10,7 +10,7 @@ function App() {
 
   //se recibe de taskGenerator una nueva tarea, se valida si existe en el [{},{}]. si ? se agrega : no
   const addTask = (newTask) => {
-    if (taskItem.find((task) => task.name === newTask)) return;
+    if (taskItem.find((task) => task.name === newTask) || newTask.trim().length <= 1) return;
     setTaskItem([...taskItem, { name: newTask, done: false }]);
   };
   //se oculta o muestra la Task cuando clicamos el checkbox
